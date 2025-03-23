@@ -107,9 +107,7 @@ const resolvers = {
   },
 };
 
-const yoga = createYoga<{
-  req: NextRequest;
-}>({
+const yoga = createYoga({
   graphqlEndpoint: "/api/graphql",
   schema: createSchema({ typeDefs, resolvers }),
   fetchAPI: { Response },
