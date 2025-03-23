@@ -1,0 +1,9 @@
+mutation AddIncident($input: IncidentInput!) {
+  addIncident(input: $input) {
+    id
+    title
+    description
+    severity
+    status
+  }
+}
