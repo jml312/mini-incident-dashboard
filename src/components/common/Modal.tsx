@@ -51,22 +51,22 @@ export default function Modal({
         <div
           className={`relative bg-white dark:bg-zinc-800 pt-2 pb-3.5 px-3 rounded-lg shadow-lg h-full my-24 ${width}`}
         >
-          <div className="flex justify-between items-center mb-3">
+          <div className="flex items-center justify-between mb-3">
             <h2 className="text-xl font-semibold text-black dark:text-white">
               {title}
             </h2>
             {withCloseButton && (
               <MdOutlineClose
                 onClick={onClose}
-                className="cursor-pointer text-xl text-black dark:text-white"
+                className="text-xl text-black cursor-pointer dark:text-white"
               />
             )}
           </div>
           {children}
-          <div className="mt-4 flex justify-end gap-2">
+          <div className="flex justify-end gap-2 mt-4">
             {onSubmit && (
               <Button
-                minWidth="w-20"
+                width="w-20"
                 isLoading={isLoading}
                 text={submitText ?? "Submit"}
                 onClick={onSubmit}
