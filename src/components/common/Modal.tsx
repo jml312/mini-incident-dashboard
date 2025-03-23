@@ -43,9 +43,9 @@ export default function Modal({
     <div
       className={`${
         isOpen ? "block" : "hidden"
-      } fixed inset-0 z-50 overflow-y-auto`}
+      } fixed inset-0 z-50 overflow-y-auto overflow-x-hidden mx-auto flex justify-center items-center`}
     >
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen min-w-[625px] sm:min-w-full w-1/2">
         <div className="fixed inset-0 bg-[rgba(0,0,0,.75)]"></div>
 
         <div

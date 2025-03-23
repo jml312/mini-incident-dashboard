@@ -13,19 +13,7 @@ import { join } from "path";
 const incidents: Incident[] = Array.from({ length: 100 }, (_, i) => ({
   id: uuid(),
   title: `Incident ${i + 1}`,
-  description: `Description for incident ${i + 1} Description for incident ${
-    i + 1
-  }Description for incident ${i + 1}Description for incident ${
-    i + 1
-  }Description for incident ${i + 1}Description for incident ${
-    i + 1
-  }Description for incident ${i + 1}Description for incident ${
-    i + 1
-  }Description for incident ${i + 1}Description for incident ${
-    i + 1
-  }Description for incident ${i + 1}Description for incident ${
-    i + 1
-  }Description for incident ${i + 1}`,
+  description: `This is a description for incident ${i + 1}`,
   severity:
     i % 3 === 0 ? Severity.High : i % 3 === 1 ? Severity.Medium : Severity.Low,
   status: i % 2 === 0 ? Status.Open : Status.Closed,
