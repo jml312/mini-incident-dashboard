@@ -8,6 +8,8 @@ import {
   Severity,
   IncidentResult,
 } from "@/generated/graphql";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 const incidents: Incident[] = Array.from({ length: 100 }, (_, i) => ({
   id: uuid(),
@@ -30,54 +32,10 @@ const incidents: Incident[] = Array.from({ length: 100 }, (_, i) => ({
   status: i % 2 === 0 ? Status.Open : Status.Closed,
 }));
 
-const typeDefs = `
-  type Incident {
-    id: ID!
-    title: String!
-    description: String
-    severity: Severity!
-    status: Status!
-  }
-
-  enum Severity {
-    LOW
-    MEDIUM
-    HIGH
-  }
-
-  enum Status {
-    OPEN
-    CLOSED
-  }
-
-  type IncidentResult {
-    items: [Incident!]!
-    totalCount: Int!
-  }
-
-  type Query {
-    incidents(
-      status: Status
-      severity: Severity
-      search: String
-      limit: Int
-      offset: Int
-    ): IncidentResult!
-  }  
-
-  input IncidentInput {
-    title: String!
-    description: String
-    severity: Severity!
-    status: Status!
-  }  
-
-  type Mutation {
-    addIncident(input: IncidentInput!): Incident!
-    updateIncident(id: ID!, input: IncidentInput!): Incident!
-    deleteIncident(id: ID!): Boolean!
-  }
-`;
+const typeDefs = readFileSync(
+  join(process.cwd(), "src/graphql/schema.graphql"),
+  "utf8"
+);
 
 const resolvers = {
   Query: {

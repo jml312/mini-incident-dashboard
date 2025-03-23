@@ -1,0 +1,46 @@
+type Incident {
+  id: ID!
+  title: String!
+  description: String
+  severity: Severity!
+  status: Status!
+}
+
+enum Severity {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum Status {
+  OPEN
+  CLOSED
+}
+
+type IncidentResult {
+  items: [Incident!]!
+  totalCount: Int!
+}
+
+type Query {
+  incidents(
+    status: Status
+    severity: Severity
+    search: String
+    limit: Int
+    offset: Int
+  ): IncidentResult!
+}
+
+input IncidentInput {
+  title: String!
+  description: String
+  severity: Severity!
+  status: Status!
+}
+
+type Mutation {
+  addIncident(input: IncidentInput!): Incident!
+  updateIncident(id: ID!, input: IncidentInput!): Incident!
+  deleteIncident(id: ID!): Boolean!
+}

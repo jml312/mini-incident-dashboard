@@ -70,8 +70,8 @@ function IncidentCard({ incident, setIncidents }: IncidentCardProps) {
       />
 
       <div className="flex flex-col p-4 border border-gray-200 rounded-lg shadow">
-        <div className="flex justify-between items-center">
-          <h2 className="font-semibold text-lg">{incident.title}</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg font-semibold">{incident.title}</h2>
           <div className="flex space-x-2">
             <Badge
               text={incident.severity}
@@ -85,7 +85,7 @@ function IncidentCard({ incident, setIncidents }: IncidentCardProps) {
         </div>
         <p className="mt-2 line-clamp-2">{incident.description}</p>
 
-        <div className="flex gap-3 mt-3 w-full justify-between items-end">
+        <div className="flex items-end justify-between w-full gap-3 mt-3">
           <div className="flex gap-2">
             <Button
               text="Edit"
@@ -135,7 +135,7 @@ type ErrorStateProps = Readonly<{
 function ErrorState({ error }: ErrorStateProps) {
   return (
     <div className="flex justify-center items-center h-[calc(100vh-250px)]">
-      <p className="text-red-500 font-medium text-lg">{error.message}</p>
+      <p className="text-lg font-medium text-red-500">{error.message}</p>
     </div>
   );
 }
@@ -143,7 +143,7 @@ function ErrorState({ error }: ErrorStateProps) {
 function EmptyState() {
   return (
     <div className="flex justify-center items-center h-[calc(100vh-250px)]">
-      <p className="text-gray-500 mt-10 font-medium text-lg">
+      <p className="mt-10 text-lg font-medium text-gray-500">
         No incidents found.
       </p>
     </div>
