@@ -44,18 +44,18 @@ export default function DeleteIncident({
       isLoading={false}
       onClose={() => {}}
       withCloseButton={false}
-      width="auto min-w-[300px]"
+      width="auto min-w-[300px] max-w-[50vw]"
     >
-      <h2 className="text-center text-black dark:text-white font-bold">
+      <h2 className="font-bold text-center text-black dark:text-white">
         Delete this incident?
       </h2>
 
-      <div className="flex flex-col items-center justify-center gap mt-2">
-        <h2 className="font-semibold text-lg">{incident.title}</h2>
+      <div className="flex flex-col items-center justify-center mt-2 gap">
+        <h2 className="text-lg font-semibold">{incident.title}</h2>
         <p>{incident.description}</p>
       </div>
 
-      <div className="mt-4 flex justify-center gap-2 -mb-4">
+      <div className="flex justify-center gap-2 mt-4 -mb-4">
         <Button
           text="Cancel"
           onClick={() => setIsOpen(false)}
