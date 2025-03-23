@@ -106,10 +106,14 @@ const resolvers = {
   },
 };
 
-const yoga = createYoga({
+interface NextContext {
+  params: Promise<Record<string, string>>;
+}
+
+const { handleRequest } = createYoga<NextContext>({
   graphqlEndpoint: "/api/graphql",
   schema: createSchema({ typeDefs, resolvers }),
   fetchAPI: { Response },
 });
 
-export { yoga as GET, yoga as POST };
+export { handleRequest as GET, handleRequest as POST };
