@@ -50,7 +50,7 @@ export default function Input({
           id={id}
           type={type}
           placeholder={placeholder}
-          className={`w-full min-w-auto flex-grow border rounded p-2 h-10 transition bg-white dark:bg-zinc-800 ${
+          className={`w-full min-w-auto field-sizing-content flex-grow border rounded p-2 h-10 transition bg-white dark:bg-zinc-800 ${
             disabled
               ? "bg-gray-100 text-gray-500 cursor-not-allowed dark:bg-zinc-700 dark:text-gray-500"
               : "border-gray-300 dark:border-gray-600"
@@ -65,7 +65,7 @@ export default function Input({
           disabled={disabled}
         />
       </div>
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+      {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
     </div>
   );
 }
