@@ -1,6 +1,5 @@
 import { createSchema, createYoga } from "graphql-yoga";
 import { v4 as uuid } from "uuid";
-import type { NextRequest } from "next/server";
 import {
   Incident,
   IncidentInput,
