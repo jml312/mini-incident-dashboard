@@ -5,7 +5,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 type Theme = "light" | "dark";
 
 type ThemeContextType = {
-  theme: Theme | null;
+  theme: Theme | undefined;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 };
@@ -13,14 +13,14 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeWrapper({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme | null>(null);
+  const [theme, setThemeState] = useState<Theme | undefined>(undefined);
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme | null;
+    const stored = localStorage.getItem("theme") as Theme | undefined;
     const system = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
-    const resolvedTheme = stored || system;
+    const resolvedTheme = stored ?? system;
 
     setThemeState(resolvedTheme);
     document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
