@@ -13,7 +13,7 @@ import Button from "@/components/common/Button";
 import CreateIncident from "@/components/modals/CreateIncident";
 import Select from "@/components/common/Select";
 import Input from "@/components/common/Input";
-import { useDebouncedState } from "@/components/hooks/useDebouncedState";
+import { useDebouncedState } from "@/hooks/useDebouncedState";
 import Pagination from "@/components/Pagination";
 
 export default function Home() {
