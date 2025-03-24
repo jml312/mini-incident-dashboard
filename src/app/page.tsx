@@ -49,7 +49,7 @@ export default function Home() {
         setIncidents={setIncidents}
       />
 
-      <div className="w-4/5 md:w-3/5 flex flex-col mx-auto">
+      <div className="flex flex-col w-4/5 mx-auto md:w-3/5">
         <Header />
 
         <div className="mb-2.5 mt-0 xl:-mt-2 flex flex-col xl:flex-row justify-between items-start xl:items-end">
@@ -69,7 +69,7 @@ export default function Home() {
           <div className="w-10 h-10"></div>
 
           {/* Filter and Search */}
-          <div className="flex flex-col xl:flex-row gap-3 -mt-7 xl:mt-4 h-full">
+          <div className="flex flex-col h-full gap-3 xl:flex-row -mt-7 xl:mt-4">
             <Select
               options={[
                 { value: "All", label: "All Severity" },

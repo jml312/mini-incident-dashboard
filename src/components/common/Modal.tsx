@@ -13,6 +13,7 @@ type ModalProps = Readonly<{
   submitDisabled?: boolean;
   width?: string;
   children: React.ReactNode;
+  allowYOverflow?: boolean;
 }>;
 
 export default function Modal({
@@ -26,6 +27,7 @@ export default function Modal({
   submitDisabled,
   width = "w-1/2",
   children,
+  allowYOverflow = false,
 }: ModalProps) {
   useEffect(() => {
     if (isOpen) {
@@ -43,7 +45,9 @@ export default function Modal({
     <div
       className={`${
         isOpen ? "block" : "hidden"
-      } fixed inset-0 z-50 overflow-y-auto overflow-x-hidden mx-auto flex justify-center items-center`}
+      } fixed inset-0 z-50 overflow-x-hidden mx-auto flex justify-center items-center ${
+        allowYOverflow ? "overflow-y-auto" : ""
+      }`}
     >
       <div className="flex items-center justify-center min-h-screen min-w-[625px] sm:min-w-full w-1/2">
         <div className="fixed inset-0 bg-[rgba(0,0,0,.75)]"></div>
