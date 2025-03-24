@@ -50,7 +50,7 @@ export default function DeleteIncident({
         Delete this incident?
       </h2>
 
-      <div className="flex flex-col items-center justify-center mt-2 gap">
+      <div className="flex flex-col items-center justify-center mt-2 mb-4.5 gap">
         <h2 className="text-lg font-semibold">{incident.title}</h2>
         <p>{incident.description}</p>
       </div>

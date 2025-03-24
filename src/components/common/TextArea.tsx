@@ -37,14 +37,14 @@ export default function TextArea({
         maxLength={maxLength}
         id={id}
         placeholder={placeholder}
-        className={`w-full border border-gray-300 rounded-md p-2 ${classes} min-h-[100px] max-h-[200px]`}
+        className={`w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 ${classes} min-h-[100px] max-h-[200px]`}
         value={value}
         onChange={(e) => {
           onChange(e);
           if (setError) setError("");
         }}
       />
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="text-sm text-red-500">{error}</p>}
     </div>
   );
 }
