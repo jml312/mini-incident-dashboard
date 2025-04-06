@@ -26,7 +26,6 @@ export default function Pagination({
           text="Previous"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
-            window.scrollTo({ top: 0, behavior: "smooth" });
             setPage(page - 1);
           }}
           px="px-4"
